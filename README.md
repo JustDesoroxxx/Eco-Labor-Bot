@@ -1,6 +1,6 @@
-# Eco Logging Bot
+# Eco Labor Bot
 
-An attempt to automate cutting of trees in Eco
+An attempt to automate putting labor in worktables in Eco
 
 ## Technical Details
 
