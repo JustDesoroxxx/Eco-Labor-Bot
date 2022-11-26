@@ -5,7 +5,7 @@ import io.redstudioragnarok.ELB.log.ELBLog;
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
-public class EcoLoggingBot {
+public class EcoLaborBot {
 
     public static void main(String[] args) throws InterruptedException {
         ELBLog.info("Hello World!");
