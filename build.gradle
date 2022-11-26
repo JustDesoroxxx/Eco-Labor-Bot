@@ -1,0 +1,6 @@
+plugins {
+    id 'java'
+}
+
+group 'io.redstudioragnarok.ELB'
+version '0.1'
