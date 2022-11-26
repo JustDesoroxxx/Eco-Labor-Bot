@@ -7,6 +7,9 @@ import java.util.concurrent.TimeUnit;
 
 public class EcoLaborBot {
 
+    public static int laborPerCycle = 3000;
+    public static int laborNeeded = 18000;
+
     public static void main(String[] args) throws InterruptedException {
         ELBLog.info("Hello World!");
 
@@ -19,8 +22,8 @@ public class EcoLaborBot {
 
         ELBLog.success("ELB has successfully started!");
 
-        controller.move("forward");
-        TimeUnit.SECONDS.sleep(1);
-        controller.move("stop");
+        int cycle = laborNeeded / laborPerCycle;
+
+        controller.putLabor(cycle);
     }
 }
