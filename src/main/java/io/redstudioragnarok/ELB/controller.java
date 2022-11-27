@@ -26,19 +26,17 @@ public class controller {
     }
 
     public static void putLabor(int cycle) throws InterruptedException {
-        robot.keyPress(KeyEvent.VK_ALT);
-        TimeUnit.MILLISECONDS.sleep(80);
-
         cycleLeft = cycle;
         ELBLog.info("Let's do " + cycleLeft + " cycle");
 
+        robot.keyPress(KeyEvent.VK_ALT);
+        TimeUnit.MILLISECONDS.sleep(40);
+
         for (int i = 0; i < 2; i++) {
             robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
-            TimeUnit.MILLISECONDS.sleep(20);
             robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
-            TimeUnit.MILLISECONDS.sleep(20);
+            TimeUnit.MILLISECONDS.sleep(240);
         }
-
         robot.keyRelease(KeyEvent.VK_ALT);
 
         if (cycleLeft != 0) {
@@ -48,15 +46,18 @@ public class controller {
 
     public static void eat() throws InterruptedException {
         robot.keyPress(KeyEvent.VK_TAB);
-        TimeUnit.MILLISECONDS.sleep(80);
+        robot.keyRelease(KeyEvent.VK_TAB);
+        TimeUnit.MILLISECONDS.sleep(40);
 
         robot.mouseMove(foodX, foodY);
 
         for (int i = 0; i < 3; i ++) {
             robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
             robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
+            TimeUnit.MILLISECONDS.sleep(40);
         }
 
+        robot.keyPress(KeyEvent.VK_TAB);
         robot.keyRelease(KeyEvent.VK_TAB);
 
         cycleLeft --;

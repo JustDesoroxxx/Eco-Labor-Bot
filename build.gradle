@@ -1,6 +1,36 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'org.beryx.jlink' version '2.25.0'
 }
 
 group 'io.redstudioragnarok.ELB'
-version '0.1'
+version '0.3'
+
+sourceCompatibility = '18'
+targetCompatibility = '18'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainModule = 'io.redstudioragnarok.ELB'
+    mainClass = 'io.redstudioragnarok.ELB.EcoLaborBot'
+}
+
+javafx {
+    version = "19"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+    implementation('org.controlsfx:controlsfx:11.1.1')
+}
+
+jlink {
+    launcher {
+        name = 'Eco Labor Bot'
+    }
+}
